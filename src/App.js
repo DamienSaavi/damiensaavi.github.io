@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     init(document.querySelector('#intro-name'), {
       showCursor: true,
-      strings: ["Damine Mousavi"],
+      strings: ["Damien Mousavi"],
       loop: false,
       typeSpeed: 5,
       startDelay: 1000,
