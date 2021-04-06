@@ -13,6 +13,49 @@
   font-weight: 400;
 }
 
+.terminal {
+  background:linear-gradient(135deg, #3c3c3c 0%, #202020 100%);
+  min-height: 500px;
+  border-radius: 10px;
+  box-shadow: -4px -4px 15px rgb(108, 107, 110), 4px 4px 15px rgb(0, 0, 0);
+}
+
+.terminal-bar {
+  color: rgb(223, 223, 223);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: .5px solid rgb(116, 116, 116);
+}
+
+.button {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+}
+
+.btn-exit {
+  background: linear-gradient(135deg, #d35858 0%, #953e3e 100%);
+}
+.btn-min {
+  background: linear-gradient(135deg, #d3bc58 0%, #95853e 100%);
+}
+.btn-max {
+  background: linear-gradient(135deg, #53bd4f 0%, #4b8036 100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .ityped-cursor {
   font-size: 1rem;
