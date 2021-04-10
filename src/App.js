@@ -91,7 +91,7 @@ function App() {
     }
   })
 
-  const [drawer, setDrawer] = useState(true)
+  const [drawer, setDrawer] = useState(false)
   const [iTypeInit, setiTypeInit] = useState(false)
 
   const techli = tech.map((e, i) => <span><li className='inline' id={'intro-tech-' + i}></li></span>)
@@ -133,14 +133,14 @@ function App() {
         </div>
       </div>
       <div class='projects-container relative container mx-auto max-w-5xl p-2'>
-        <h1 className='mb-4 text-3xl flex gap-1 text-main'>Projects<IoRocket className='w-6' /></h1>
+        <h1 className='mb-4 text-3xl flex text-main'>Projects<IoRocket className='ml-1 w-6' /></h1>
 
         <div class='project-billboard w-full flex flex-col mx-auto max-w-4xl sm:flex-row gap-2'>
-          <div className='project-image-container w-full flex align-middle z-10 px-16 sm:p-0 sm:w-1/3'>
-            <img src={brewmate_icon} alt='' className='project-image w-12 shadow-3xl mx-auto z-10 '/>
+          <div className='project-image-container w-full z-10 px-16 sm:p-0 sm:w-1/3'>
+            <img src={brewmate_icon} alt='' className='project-image shadow-3xl mx-auto z-10 '/>
           </div>
           <div className='project-desc w-full flex flex-col bg-base-light shadow-main bg-opacity-20 text-main rounded-3xl p-4 pt-24 -mt-24 sm:pt-4 sm:mt-0 sm:shadow-none sm:bg-opacity-0'>
-            <p className='text-3xl font-bold text-center pb-2 pt-1 sm:text-left'>Brewmate</p>
+            <p className='text-3xl font-bold text-center align-middle pb-2 pt-2 sm:text-left z-20'>Brewmate</p>
             <p>
               A companion app for home brewing à la scientific method!
               <ul className='features pl-8'>
@@ -150,9 +150,9 @@ function App() {
                 <li>Save your recipes and logs to the cloud</li>
               </ul>
             </p>
-            <div className='flex flex-col justify-start flex-wrap content-center sm:content-start p-4 gap-2'>
-              <img src={appstore_icon} className='w-36'/>
-              <img src={gh_icon} className='h-10 w-36 object-scale-down border-black border bg-white rounded-lg'/>
+            <div className='flex flex-col justify-start flex-wrap content-center sm:content-start p-4'>
+              <img src={appstore_icon} className='w-36 m-1'/>
+              <img src={gh_icon} className='h-10 m-1 w-36 object-scale-down border-black border bg-white rounded-lg'/>
             </div>
           </div>
         </div>

@@ -63,14 +63,13 @@
   font-family: 'Josefin Sans', sans-serif;
 }
 
-.project-desc {
+.project-image-container {
 }
 
 .project-image {
   width: 100%;
   min-width: 150px;
   max-width: 300px;
-  height:min-content;
   border-radius: 22%;
 }
 
