@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import NavigationBar from './NavigationBar'
 import { init } from 'ityped'
-import { IoRocket } from "react-icons/io5";
+import { IoRocket, IoLogoGithub } from "react-icons/io5";
+import { SiExpo } from "react-icons/si";
 import './App.css'
 import brewmate_icon from './brewmate.png'
-import gh_icon from './gh.png'
 
 const tech = [
   'ReactJS', 'MySQL', 'Unity',
@@ -90,7 +90,6 @@ function App() {
     }
   })
 
-  const [drawer, setDrawer] = useState(false)
   const [iTypeInit, setiTypeInit] = useState(false)
 
   const techli = tech.map((e, i) => <span><li className='inline' id={'intro-tech-' + i}></li></span>)
@@ -98,8 +97,8 @@ function App() {
   return (
     <div className='root'>
       <NavigationBar/>
-      <div className='h-10'></div>
-      <div className='intro-container flex flex-col p-2 w-full py-12 sm:h-102'>
+      <div className='h-16'></div>
+      <div className='intro-container flex justify-start h-screen xs:justify-center flex-col p-2 pb-32 xs:-mb-32 w-full sm:mb-0 sm:pb-2 sm:h-102'>
         <div className='terminal max-w-lg flex flex-col self-center w-full'>
           <div className='terminal-bar flex justify-between w-full p-2'>
             <div class='button flex-shrink-0 btn-exit'></div>
@@ -125,31 +124,33 @@ function App() {
           </div>
         </div>
       </div >
-      <div class='projects-container relative container mx-auto max-w-5xl p-2'>
+      <div class='projects-container container mx-auto max-w-2xl p-2'>
         <h1 className='text-3xl flex justify-center text-main'>Projects<IoRocket className='ml-1 w-6' /></h1>
-        <hr className='mt-1 mb-16 w-96 mx-auto' />
+        <hr className='mt-1 mb-8 w-2/3 mx-auto' />
 
         <div class='project-billboard w-full flex flex-col mx-auto max-w-4xl sm:flex-row gap-2'>
           <div className='project-image-container w-full z-10 px-16 sm:p-0 sm:w-1/3'>
-            <img src={brewmate_icon} alt='' className='project-image shadow-3xl mx-auto z-10 ' />
+            <img src={brewmate_icon} alt='' className='project-image shadow-main mx-auto z-10 ' />
           </div>
-          <div className='project-desc w-full flex flex-col bg-base-light shadow-main bg-opacity-20 text-main rounded-3xl p-4 pt-24 -mt-24 sm:pt-4 sm:mt-0 sm:shadow-none sm:bg-opacity-0'>
+          <div className='project-desc w-full flex flex-col bg-base-light bg-opacity-60 text-main rounded-3xl p-4 pt-24 -mt-24 sm:pt-4 sm:mt-0 sm:shadow-none sm:bg-opacity-0'>
             <p className='text-3xl font-bold text-center align-middle pb-2 pt-2 sm:text-left z-20'>Chefmate</p>
             <p>
-              A simple recipe app.
+              A simple no-nonsense recipe app.
               <ul className='features pl-8'>
                 <li>Step-by-step recipe walkthrough</li>
-                <li>Create your own recipes</li>
-                <li>Save your recipes and logs to the cloud</li>
+                <li>Create and modify your own recipes</li>
+                <li>Save your recipes to the cloud and access them on another device</li>
               </ul>
             </p>
-            <div className='flex flex-col justify-start flex-wrap content-center sm:content-start p-4'>
-              {/* <img src={appstore_icon} className='w-36 m-1' /> */}
-              <img src={gh_icon} className='h-10 m-1 w-36 object-scale-down border-black border bg-white rounded-lg' />
+            <div className='flex flex-row justify-center sm:justify-start flex-wrap justify-content-center sm:content-start p-4 gap-3'>
+              <a className='w-32 text-center transform bg-base-dark border-b-4 hover:border-b-2 hover:translate-y-0.5  border-gray-900 rounded-xl px-3 py-2' href='https://github.com/DamienSaavi/brewmate'>GitHub<IoLogoGithub className='ml-1 inline w-4 h-4 align-baseline'/></a>
+              <a className='w-32 text-center transform bg-base-dark border-b-4 hover:border-b-2 hover:translate-y-0.5  border-gray-900 rounded-xl px-3 py-2' href='https://expo.io/@damiensaavi/chefmate'>Expo<SiExpo className='ml-1 inline w-4 h-4 align-middle'/></a>
             </div>
           </div>
         </div>
       </div>
+    <div className='h-16'></div>
+    <footer className='text-sm text-main transition-all hover:text-accent transform hover:-translate-y-1 text-center p-2 pb-8'><a href='https://github.com/DamienSaavi/damiensaavi.github.io'>Designed and built by Damien Mousavi</a></footer>
     </div >
   )
 }

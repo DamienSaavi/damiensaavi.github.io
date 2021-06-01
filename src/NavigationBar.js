@@ -1,14 +1,14 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import brewmate_icon from './brewmate.png'
+import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
+import logo from './logo.png'
 
 const navigation = [
     { name: 'Home', href: '/', current: true },
-    { name: 'About', href: '/about', current: false },
-    { name: 'Projects', href: '/projects', current: false },
-    { name: 'Contact', href: '/contact', current: false },
+    { name: 'Projects', href: 'https://github.com/DamienSaavi?tab=repositories', current: false },
+    // { name: 'About', href: '/about', current: false },
+    // { name: 'Contact', href: '/contact', current: false },
 ]
 
 function classNames(...classes) {
@@ -36,10 +36,14 @@ export default function NavigationBar() {
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex-shrink-0 flex items-center">
                                     <img
-                                        className="block h-8 w-auto rounded-full"
-                                        src={brewmate_icon}
-                                        alt="Workflow"
+                                        className="block h-9 w-auto rounded-full"
+                                        src={logo}
+                                        alt="Damien Saavi"
                                     />
+                                    <div className='flex flex-col gap-0 pt-1 leading-4 ml-1 text-gray-400 select-none'>
+                                        <p className=''>Damien</p>
+                                        <p className=''>Mousavi</p>
+                                    </div>
                                 </div>
                                 <div className="hidden sm:block sm:ml-6">
                                     <div className="flex space-x-4">
@@ -59,8 +63,9 @@ export default function NavigationBar() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='hidden sm:block text-white bg-red-400'>
-                                {'Github + LinkedIn'}{/* github and linkedin */}
+                            <div className='hidden sm:block text-white sm:space-x-3'>
+                                <a href='https://github.com/DamienSaavi'><IoLogoGithub className='text-subtle ml-1 inline w-6 h-6' /></a>
+                                <a href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-accent ml-1 inline w-6 h-6' /></a>
                             </div>
                         </div>
                     </div>

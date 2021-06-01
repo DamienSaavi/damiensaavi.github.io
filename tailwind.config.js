@@ -42,12 +42,14 @@ module.exports = {
         'highlight': '#B86D5B',
         'subtle': '#85A27C',
         'base-dark': '#393D46',
-        'base-light': '#73758D'
+        'base-light': '#73758D',
       }
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      borderWidth: ['hover']
+    },
   },
   plugins: [],
 }
