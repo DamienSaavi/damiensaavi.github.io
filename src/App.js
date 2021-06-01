@@ -133,7 +133,8 @@ function App() {
         </div>
       </div>
       <div class='projects-container relative container mx-auto max-w-5xl p-2'>
-        <h1 className='mb-4 text-3xl flex text-main'>Projects<IoRocket className='ml-1 w-6' /></h1>
+        <h1 className='text-3xl flex justify-center text-main'>Projects<IoRocket className='ml-1 w-6' /></h1>
+        <hr className='mt-1 mb-16 w-96 mx-auto'/>
 
         <div class='project-billboard w-full flex flex-col mx-auto max-w-4xl sm:flex-row gap-2'>
           <div className='project-image-container w-full z-10 px-16 sm:p-0 sm:w-1/3'>
