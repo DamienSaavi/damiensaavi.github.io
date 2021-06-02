@@ -6,4 +6,5 @@ Check it out here: https://damiensaavi.github.io
 
 ### TODO
 - [ ] Add "About" and "Contact" page
+- [ ] Add more projects
 - [ ] Add commands to terminal
