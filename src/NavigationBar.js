@@ -64,8 +64,8 @@ export default function NavigationBar() {
                                 </div>
                             </div>
                             <div className='hidden sm:block text-white sm:space-x-3'>
-                                <a href='https://github.com/DamienSaavi'><IoLogoGithub className='text-subtle ml-1 inline w-6 h-6' /></a>
-                                <a href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-accent ml-1 inline w-6 h-6' /></a>
+                                <a href='https://github.com/DamienSaavi'><IoLogoGithub className='text-main ml-1 inline w-6 h-6' /></a>
+                                <a href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-main ml-1 inline w-6 h-6' /></a>
                             </div>
                         </div>
                     </div>

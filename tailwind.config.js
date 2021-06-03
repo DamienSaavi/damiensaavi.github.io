@@ -39,8 +39,10 @@ module.exports = {
       colors: {
         'main': 'rgb(223, 223, 223)',
         'accent': '#DCC579',
+        'accent-light': '#E3D093',
         'highlight': '#B86D5B',
         'subtle': '#85A27C',
+        'subtle-dark': '#4C5058',
         'base-dark': '#393D46',
         'base-light': '#73758D',
       }
@@ -48,7 +50,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      borderWidth: ['hover']
+      borderWidth: ['hover', 'active'],
+      translate: ['active']
     },
   },
   plugins: [],
