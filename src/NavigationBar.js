@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
-import logo from './logo.png'
+import logo from './logo-md.png'
 
 const navigation = [
     { name: 'Home', href: '/', current: true },
@@ -64,8 +64,8 @@ export default function NavigationBar() {
                                 </div>
                             </div>
                             <div className='hidden sm:block text-white sm:space-x-3'>
-                                <a href='https://github.com/DamienSaavi'><IoLogoGithub className='text-main ml-1 inline w-6 h-6' /></a>
-                                <a href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-main ml-1 inline w-6 h-6' /></a>
+                                <a href='https://github.com/DamienSaavi'><IoLogoGithub className='text-main ml-1 inline w-6 h-6' title='GitHub'/></a>
+                                <a href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-main ml-1 inline w-6 h-6' title='LinkedIn' /></a>
                             </div>
                         </div>
                     </div>
