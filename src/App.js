@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import NavigationBar from './NavigationBar'
 import { init } from 'ityped'
 import { IoRocket, IoLogoGithub } from "react-icons/io5";
-import { SiExpo } from "react-icons/si";
 import './App.css'
 import brewmate_icon from './brewmate.png'
 import vybot_icon from './vybot.png'
@@ -146,7 +145,6 @@ function App() {
             </p>
             <div className='xs:h-16 flex flex-row justify-center sm:justify-start flex-wrap sm:content-start p-4 gap-3'>
               <a className='w-32 text-center transform bg-base-dark border-b-4 active:border-b-2 active:translate-y-0.5 hover:bg-subtle-dark  border-gray-900 rounded-xl px-3 py-2' href='https://github.com/DamienSaavi/brewmate'>GitHub<IoLogoGithub className='ml-1 inline w-4 h-4 align-baseline' /></a>
-              <a className='w-32 text-center transform bg-base-dark border-b-4 active:border-b-2 active:translate-y-0.5 hover:bg-subtle-dark  border-gray-900 rounded-xl px-3 py-2' href='https://expo.io/@damiensaavi/chefmate'>Expo<SiExpo className='ml-1 inline w-4 h-4 align-middle' /></a>
             </div>
           </div>
         </div>
