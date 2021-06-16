@@ -2,8 +2,11 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    minHeight: {
+      'sm': '560px',
+    },
     screens: {
-      'xs': '385px',
+      'xs': '460px',
 
       'sm': '640px',
       // => @media (min-width: 640px) { ... }

@@ -64,8 +64,8 @@ export default function NavigationBar() {
                                 </div>
                             </div>
                             <div className='hidden sm:block text-white sm:space-x-3'>
-                                <a href='https://github.com/DamienSaavi'><IoLogoGithub className='text-main ml-1 inline w-6 h-6' title='GitHub'/></a>
-                                <a href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-main ml-1 inline w-6 h-6' title='LinkedIn' /></a>
+                                <a target="_blank" href='https://github.com/DamienSaavi'><IoLogoGithub className='text-main ml-1 inline w-6 h-6' title='GitHub' /></a>
+                                <a target="_blank" href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-main ml-1 inline w-6 h-6' title='LinkedIn' /></a>
                             </div>
                         </div>
                     </div>
@@ -85,6 +85,10 @@ export default function NavigationBar() {
                                     {item.name}
                                 </a>
                             ))}
+                            <div className='flex flex-row gap-4 justify-center'>
+                                <a target="_blank" href='https://github.com/DamienSaavi'><IoLogoGithub className='text-main ml-1 inline w-9 h-9' title='GitHub' /></a>
+                                <a target="_blank" href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-main ml-1 inline w-9 h-9' title='LinkedIn' /></a>
+                            </div>
                         </div>
                     </Disclosure.Panel>
                 </>
