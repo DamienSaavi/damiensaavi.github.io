@@ -70,7 +70,7 @@ function App() {
   return (
     <div className='root text-main'>
       <NavigationBar />
-      <div className='h-16 ' />
+      <div className='h-16 md:hidden' />
       <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 h-screen min-h-sm w-full px-4 pb-16'>
         <div className='text-center md:text-left flex flex-col'>
           <h3 className='text-left opacity-90'>Hello 👋🏽 I'm</h3>
@@ -78,7 +78,7 @@ function App() {
           <p className='text-6xl hidden md:block font-extrabold '>Damien<br />Mousavi</p>
           <h3 className='text-lg opacity-90'>Private Tutor | Web developer</h3>
         </div>
-        <div className='terminal relative flex flex-col w-full max-w-lg md:max-w-lg h-1/2 md:h-96 min-h-96'>
+        <div className='terminal relative flex flex-col w-full max-w-lg h-1/2 md:h-96'>
           <div className='terminal-bar  text-xs flex justify-between h-8 p-2'>
             <div class='button flex-shrink-0 btn-exit'></div>
             <div class='button flex-shrink-0 btn-min'></div>
@@ -106,7 +106,7 @@ function App() {
           </div>
         </div>
       </div >
-      <div class='projects-container container mx-auto max-w-lg sm:max-w-2xl p-2'>
+      <div class='projects-container container mx-auto max-w-lg sm:max-w-2xl -mt-16 md:-mt-20 p-2'>
         <h1 className='text-4xl flex justify-center '>Projects<IoRocket className='ml-1 w-6' /></h1>
         <hr className='mt-1 mb-12 w-2/3 mx-auto' />
 
