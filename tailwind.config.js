@@ -3,7 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     minHeight: {
-      'sm': '560px',
+      'sm': '620px'
     },
     screens: {
       'xs': '460px',
