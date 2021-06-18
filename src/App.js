@@ -71,18 +71,18 @@ function App() {
   return (
     <div className='root text-main'>
       <NavigationBar />
-      <div className='flex flex-col relative md:flex-row justify-center items-center gap-4 md:gap-8 h-screen min-h-sm w-full px-4 pb-16 overflow-x-hidden'>
-        <div className='text-center md:text-left flex flex-col'>
-          <h3 className='text-left opacity-90 z-10'>Hello 👋🏽 I'm</h3>
+      <div className='flex flex-col relative md:flex-row justify-center items-center gap-4 md:gap-8 h-screen min-h-sm w-full px-4 pb-16 overflow-hidden'>
+        <div className='text-center md:text-left flex flex-col text-shadow'>
+          <h3 className='text-left opacity-90 z-10'>Hello👋🏽 I'm</h3>
           <p className='text-4xl xs:text-5xl md:hidden font-extrabold z-10'>Damien Mousavi</p>
           <p className='text-6xl hidden md:block font-extrabold z-10'>Damien<br />Mousavi</p>
           <h3 className='text-lg opacity-90 z-10'>Private Tutor | Web developer</h3>
         </div>
 
-          <div className='absolute rounded-full bg-bottom md:bg-right-top z-0 md:mr-72' id='cog'/>
+        <div className='sphere absolute rounded-full bg-bottom md:bg-right-top z-0 md:mr-72 transform md:-rotate-135' />
 
-        <div className='terminal relative flex flex-col w-full max-w-lg h-1/2 md:h-96 opacity-90 blur-xl shadow-3xl'>
-          <div className='terminal-bar  text-xs flex justify-between h-8 p-2'>
+        <div className='terminal relative flex flex-col w-full max-w-lg h-1/2 max-h-102 md:h-96 shadow-3xl'>
+          <div className='terminal-bar text-xs flex justify-between h-8 p-2'>
             <div class='button flex-shrink-0 btn-exit'></div>
             <div class='button flex-shrink-0 btn-min'></div>
             <div class='button flex-shrink-0 btn-max'></div>
@@ -110,7 +110,7 @@ function App() {
         </div>
       </div >
       <div class='projects-container container mx-auto max-w-lg sm:max-w-3xl -mt-20 p-2'>
-        <h1 className='text-4xl flex justify-center '>Projects<IoRocket className='ml-1 w-6' /></h1>
+        <h1 className='text-4xl flex justify-center Z-10 text-shadow'>Projects<IoRocket className='ml-1 w-6' /></h1>
         <hr className='mt-1 mb-12 w-2/3 mx-auto' />
 
         <div class='project-billboard mb-12 w-full flex flex-col sm:flex-row gap-4'>
@@ -118,7 +118,7 @@ function App() {
             <img src={brewmate_icon} alt='' className='project-image shadow-3xl mx-auto z-10 ' />
           </div>
           <div className='project-desc w-full flex flex-col bg-base-light bg-opacity-40  rounded-3xl p-4 sm:px-5 pt-24 -mt-24 sm:pt-4 sm:mt-0 sm:shadow-none'>
-            <p className='text-3xl font-bold text-center align-middle py-2 sm:text-left z-20'>Chefmate</p>
+            <p className='text-3xl font-bold text-center align-middle py-2 sm:text-left z-20 text-shadow'>Chefmate</p>
             <p className='opacity-90'>
               A simple no-nonsense recipe app.
               <ul className='features pl-8'>
@@ -138,7 +138,7 @@ function App() {
             <img src={vybot_icon} alt='' className='project-image shadow-3xl mx-auto z-10 ' />
           </div>
           <div className='project-desc w-full flex flex-col bg-base-light bg-opacity-40  rounded-3xl p-4 sm:px-5 pt-24 -mt-24 sm:pt-4 sm:mt-0 sm:shadow-none '>
-            <p className='text-3xl font-bold text-center align-middle py-2 sm:text-left z-20'>VyBot</p>
+            <p className='text-3xl font-bold text-center align-middle py-2 sm:text-left z-20 text-shadow'>VyBot</p>
             <p className='opacity-90'>
               Discord music bot with extensive features.
               <ul className='features pl-8'>
@@ -159,7 +159,7 @@ function App() {
             <img src={bm_icon} alt='' className='project-image shadow-3xl mx-auto z-10 ' />
           </div>
           <div className='project-desc w-full flex flex-col bg-base-light bg-opacity-40  rounded-3xl p-4 sm:px-5 pt-24 -mt-24 sm:pt-4 sm:mt-0 sm:shadow-none '>
-            <p className='text-3xl font-bold text-center align-middle py-2 sm:text-left z-20'>Budget Mailer</p>
+            <p className='text-3xl font-bold text-center align-middle py-2 sm:text-left z-20 text-shadow'>Budget Mailer</p>
             <p className='opacity-90'>
               A mailchimp clone.
               <ul className='features pl-8'>
@@ -179,7 +179,7 @@ function App() {
             <img src={gol_icon} alt='' className='project-image shadow-3xl mx-auto z-10 ' />
           </div>
           <div className='project-desc w-full flex flex-col bg-base-light bg-opacity-40  rounded-3xl p-4 sm:px-5 pt-24 -mt-24 sm:pt-4 sm:mt-0 sm:shadow-none '>
-            <p className='text-3xl font-bold text-center align-middle py-2 sm:text-left z-20'>Lazy Game of Life</p>
+            <p className='text-3xl font-bold text-center align-middle py-2 sm:text-left z-20 text-shadow'>Lazy Game of Life</p>
             <p className='opacity-90'>
               Conway's Game of Life with a "lazy" update function implementation to boost performance.
             </p>
