@@ -25,7 +25,7 @@ function App() {
       strings: ["CSUF graduate with a bachelor's degree in computer science plus various extra-curricular activities in full-stack web development, video game development, and tutoring for math, computer science, and physics."],
       loop: false,
       typeSpeed: 5,
-      startDelay: 100,
+      startDelay: 2000,
       cursorChar: "█",
       onFinished: function () {
         let elements = document.getElementsByClassName('ityped-cursor');

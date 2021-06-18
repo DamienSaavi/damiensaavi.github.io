@@ -11,9 +11,9 @@
   box-shadow: inset 0px 700px 180px -500px #e66464be,
               0px -7px 7px -4px #facdcd67;
 
-  animation: spin 6s ease 1s backwards;
-  -webkit-animation: spin 6s ease 1s backwards;
-  -moz-animation: spin 6s ease 1s backwards;
+  animation: fade 6s ease 1s backwards;
+  -webkit-animation: fade 6s ease 1s backwards;
+  -moz-animation: fade 6s ease 1s backwards;
 }
 
 
@@ -88,13 +88,13 @@ nav, footer {
 
 .ityped-cursor {
   color: rgb(90, 240, 90);
-  -webkit-animation: blink .5s infinite;
-  -moz-animation: blink .5s infinite;
-  animation: blink .5s infinite;
+  -webkit-animation: blink .2s infinite;
+  -moz-animation: blink .2s infinite;
+  animation: blink .2s infinite;
   animation-direction: alternate;
 }
 
-@keyframes spin {
+@keyframes fade {
   0% {
     opacity: 0;
     box-shadow: inset 0px 10px 5px -5px #e66464be,
@@ -109,27 +109,33 @@ nav, footer {
   }
 }
 
-@-webkit-keyframes spin {
+@-webkit-keyframes fade {
   0% {
     opacity: 0;
-    transform:rotate(180deg);
+    box-shadow: inset 0px 10px 5px -5px #e66464be,
+                0px -7px 7px -4px #facdcd00;
+  }
+  50% {
+    opacity: 1;
   }
   100% {
-    opacity: 1;
-    transform:rotate(0deg);
+  box-shadow: inset 0px 700px 180px -500px #e66464be,
+              0px -7px 7px -4px #facdcd67;
   }
 }
 
-@-moz-keyframes spin {
+@-moz-keyframes fade {
   0% {
-    /* opacity: 0;
-    transform:rotate(180deg); */
-    background-image: radial-gradient(#e66464be 0% ,transparent 0%);
+    opacity: 0;
+    box-shadow: inset 0px 10px 5px -5px #e66464be,
+                0px -7px 7px -4px #facdcd00;
+  }
+  50% {
+    opacity: 1;
   }
   100% {
-    /* opacity: 1;
-    transform:rotate(0deg); */
-    background-image: radial-gradient(#e66464be 0% ,transparent 80%);
+  box-shadow: inset 0px 700px 180px -500px #e66464be,
+              0px -7px 7px -4px #facdcd67;
   }
 }
 
