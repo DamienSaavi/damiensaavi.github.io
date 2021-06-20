@@ -40,28 +40,32 @@ module.exports = {
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
      '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-      none: 'none',
-      main: '4px 4px 15px rgba(0, 0, 0, 0.7)'
+      none: 'none'
     },
     extend: {
       spacing: {
         '102': '500px'
       },
       colors: {
-        'main': 'rgb(223, 223, 223)',
-        'accent': '#DCC579',
-        'accent-light': '#E3D093',
-        'highlight': '#B86D5B',
-        'subtle': '#85A27C',
-        'subtle-dark': '#4C5058',
-        'base-dark': '#393D46',
-        'base-light': '#73758D',
+        'coa': '#DCC579',
+        'coa-highlight': '#E3D093',
+        'coa-dark': '#7A6F4F',
+        'main': '#9B9ECE',
+        'main-dark': '#333442',
+        'main-light': '#4d4962',
+        'main-highlight': '#aaade2',
+        'background': '#332b46',
+        'accent': '#e66464',
+        'accent-light': '#e68686'
       }
     },
   },
   variants: {
     extend: {
       borderWidth: ['hover', 'active'],
+      padding: ['active'],
+      margin: ['active'],
+      height: ['active'],
       translate: ['active']
     },
   },

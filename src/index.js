@@ -6,7 +6,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import './index.css';
+import './stylesheet/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
