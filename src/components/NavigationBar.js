@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
-import logo from './logo-md.png'
+import logo from '../assets/logo-md.png'
 
 const navigation = [
     { name: 'Home', href: '/', current: true },
@@ -17,7 +17,7 @@ function classNames(...classes) {
 
 export default function NavigationBar() {
     return (
-        <Disclosure as="nav" className="fixed w-full bg-base-dark z-50">
+        <Disclosure as="nav" className="fixed w-full bg-main-dark z-50">
             {({ open }) => (
                 <>
                     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
