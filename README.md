@@ -6,8 +6,7 @@ Check it out here: https://damiensaavi.github.io
 
 ### TODO
 - [ ] Use Frontity; migrate to Wordpress.
-- [ ] Add "About" and "Contact" page
 - [ ] Add commands to terminal
 
 ### Done
-- [x] Add more projects
+- [x] Add "About" page
