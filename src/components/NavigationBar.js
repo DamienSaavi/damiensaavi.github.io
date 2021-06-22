@@ -16,7 +16,7 @@ export default function NavigationBar({ path }) {
 
     const navigation = [
         { name: 'Home', href: '/', current: (path == '/') },
-        { name: 'About', href: '/about', current: (path == '/about') },
+        { name: 'About me', href: '/about', current: (path == '/about') },
     ]
 
 
