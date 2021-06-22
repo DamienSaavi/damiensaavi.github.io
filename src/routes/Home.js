@@ -140,9 +140,13 @@ function Home({ iTypeInit, setiTypeInit, className }) {
                 <li>Shuffle and modify queue.</li>
                 <li>Intuitive text-based UI.</li>
               </ul>
+
               <Project.ButtonBar>
                 <Project.Button href='https://github.com/DamienSaavi/vybot'>
                   GitHub<IoLogoGithub className='ml-1 inline w-4 h-4 align-baseline' />
+                </Project.Button>
+                <Project.Button href='https://discord.com/api/oauth2/authorize?client_id=679935364030660646&permissions=3155968&scope=bot'>
+                  Try it!<IoLogoGithub className='ml-1 inline w-4 h-4 align-baseline' />
                 </Project.Button>
               </Project.ButtonBar>
             </Project.Description>
