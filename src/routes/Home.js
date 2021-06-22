@@ -14,6 +14,8 @@ const tech = [
 ]
 
 function Home({ iTypeInit, setiTypeInit, className }) {
+
+  // TODO: try useref for ityped queries selection
   useEffect(() => {
     if (iTypeInit) return
     setiTypeInit(true)
@@ -67,7 +69,7 @@ function Home({ iTypeInit, setiTypeInit, className }) {
   const techli = tech.map((e, i) => <span><li className='inline' id={'intro-tech-' + i}></li></span>)
 
   return (
-    <div className={`root text-gray-200 h-screen overscroll-y-auto ${className}`}>
+    <div className={`root text-gray-200 ${className}`}>
       <div className='intro-container flex flex-col relative md:flex-row justify-center items-center gap-4 md:gap-8 h-full min-h-sm w-full px-4 pb-16 overflow-hidden'>
         <div className='intro-name text-center md:text-left flex flex-col text-shadow z-10'>
           <p className='text-left opacity-90'>Hello👋🏽 I'm</p>
@@ -86,8 +88,8 @@ function Home({ iTypeInit, setiTypeInit, className }) {
           </div>
           <div className='terminal-console overflow-y-auto p-2 flex-grow'>
             <div className='w-full opacity-80 pb-8'>
-              <p className='inline' id="intro-desc"></p><div className='mb-4' />
-              <p className='inline' id="intro-tech"></p><div className='mb-4' />
+              <p className='inline' id="intro-desc"></p><div className=' mb-4'/>
+              <p className='inline' id="intro-tech"></p><div className=' mb-4'/>
               <ul className='grid grid-cols-3 gap-0 mx-auto pl-4'>
                 {techli}
               </ul>

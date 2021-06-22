@@ -68,16 +68,15 @@ export default function NavigationBar({ path, setRoute }) {
                                     </div>
                                 </div>
                             </div>
-                            {true ?
                                 <div className={`transform transition ${path=='about'? `-translate-y-full`:``} hidden sm:flex relative text-white h-full`}>
                                     <div className='p-2 z-10 flex h-full w-80 select-none text-center bg-main-dark justify-end' >
                                         <a className='w-32 flex flex-grow-0 text-center justify-center transform bg-coa border-b-4 active:border-b-2 active:mt-0.5 active:translate-y-0.5 hover:bg-coa-highlight border-coa-dark rounded-xl px-3 py-2.5 text-black cursor-pointer'
                                         onClick={() => toggleCard(!card)}>Contact Info</a>
                                     </div>
-                                    <div className={`transition transform ${card ? 'translate-y-2' : '-translate-y-full'} w-min absolute top-full right-0 z-0`}>
-                                        <InfoCard className={`rounded-3xl transition ${card ? 'shadow-glow' : 'shadow-none'}`} />
+                                    <div className={`transition transform ${card && path=='home' ? 'translate-y-2' : '-translate-y-full'} w-min absolute top-full right-0 z-0`}>
+                                        <InfoCard className={`rounded-3xl transition ${card && path=='home' ? 'shadow-glow' : 'shadow-none'}`} />
                                     </div>
-                                </div> : null}
+                                </div>
 
                         </div>
                     </div>
@@ -97,20 +96,6 @@ export default function NavigationBar({ path, setRoute }) {
                                     {item.name}
                                 </a>
                             ))}
-                            {/* <a
-                                key={'LinkedIn'}
-                                href={'https://www.linkedin.com/in/damienmousavi'}
-                                className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium')}
-                            >
-                                {'LinkedIn'}
-                            </a>
-                            <a
-                                key={'Github'}
-                                href={'https://github.com/DamienSaavi'}
-                                className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium')}
-                            >
-                                {'Github'}
-                            </a> */}
                             <div className='flex flex-row gap-4 py-4 justify-start text-gray-300'>
                                 <a target="_blank" href='https://github.com/DamienSaavi'><IoLogoGithub className='hover:text-white ml-1 inline w-9 h-9' title='GitHub' /></a>
                                 <a target="_blank" href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='hover:text-white ml-1 inline w-9 h-9' title='LinkedIn' /></a>
