@@ -11,12 +11,12 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function NavigationBar({ path }) {
+export default function NavigationBar({ path, setRoute }) {
     const [card, toggleCard] = useState(false)
 
     const navigation = [
-        { name: 'Home', href: '/', current: (path == '/') },
-        { name: 'About me', href: '/about', current: (path == '/about') },
+        { name: 'Home', routeTo: 'home', current: (path == 'home') },
+        { name: 'About me', routeTo: 'about', current: (path == 'about') },
     ]
 
 
@@ -55,12 +55,12 @@ export default function NavigationBar({ path }) {
                                         {navigation.map((item) => (
                                             <a
                                                 key={item.name}
-                                                href={item.href}
                                                 className={classNames(
                                                     item.current ? 'bg-main-light text-white' : 'text-gray-300 hover:bg-opacity-50 hover:bg-main-light hover:text-white',
-                                                    'px-3 py-2 rounded-md text-sm font-medium'
+                                                    'px-3 py-2 rounded-md text-sm font-medium cursor-pointer select-none'
                                                 )}
                                                 aria-current={item.current ? 'page' : undefined}
+                                                onClick={() => { setRoute(item.routeTo) }}
                                             >
                                                 {item.name}
                                             </a>
@@ -68,17 +68,16 @@ export default function NavigationBar({ path }) {
                                     </div>
                                 </div>
                             </div>
-                            {path != '/about' ? <div className='hidden sm:flex relative text-white h-full'>
-
-                                <div className='p-2 z-10 flex h-full w-80 select-none text-center bg-main-dark justify-end' >
-                                    <a className='w-32 flex flex-grow-0 text-center justify-center transform bg-coa border-b-4 active:border-b-2 active:mt-0.5 active:translate-y-0.5 hover:bg-coa-highlight border-coa-dark rounded-xl px-3 py-2.5 text-black cursor-pointer' onClick={() => toggleCard(!card)}>Contact Info</a>
-                                </div>
-                                <div className={`transition transform ${card ? 'translate-y-2' : '-translate-y-full'} w-min absolute top-full right-0 z-0`}>
-                                    <InfoCard className={`rounded-3xl transition ${card ? 'shadow-glow' : 'shadow-none'}`} />
-                                </div>
-                                {/* <a target="_blank" href='https://github.com/DamienSaavi'><IoLogoGithub className='text-main ml-1 inline w-6 h-6' title='GitHub' /></a>
-                                <a target="_blank" href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-main ml-1 inline w-6 h-6' title='LinkedIn' /></a> */}
-                            </div> : null}
+                            {true ?
+                                <div className={`transform transition ${path=='about'? `-translate-y-full`:``} hidden sm:flex relative text-white h-full`}>
+                                    <div className='p-2 z-10 flex h-full w-80 select-none text-center bg-main-dark justify-end' >
+                                        <a className='w-32 flex flex-grow-0 text-center justify-center transform bg-coa border-b-4 active:border-b-2 active:mt-0.5 active:translate-y-0.5 hover:bg-coa-highlight border-coa-dark rounded-xl px-3 py-2.5 text-black cursor-pointer'
+                                        onClick={() => toggleCard(!card)}>Contact Info</a>
+                                    </div>
+                                    <div className={`transition transform ${card ? 'translate-y-2' : '-translate-y-full'} w-min absolute top-full right-0 z-0`}>
+                                        <InfoCard className={`rounded-3xl transition ${card ? 'shadow-glow' : 'shadow-none'}`} />
+                                    </div>
+                                </div> : null}
 
                         </div>
                     </div>
@@ -88,12 +87,12 @@ export default function NavigationBar({ path }) {
                             {navigation.map((item) => (
                                 <a
                                     key={item.name}
-                                    href={item.href}
                                     className={classNames(
                                         item.current ? ' bg-main-light text-white' : 'text-gray-300 hover:bg-main-light hover:bg-opacity-50 hover:text-white',
-                                        'block px-3 py-2 rounded-md text-base font-medium'
+                                        'block px-3 py-2 rounded-md text-base font-medium cursor-pointer select-none' 
                                     )}
                                     aria-current={item.current ? 'page' : undefined}
+                                    onClick={() => setRoute(item.routeTo)}
                                 >
                                     {item.name}
                                 </a>

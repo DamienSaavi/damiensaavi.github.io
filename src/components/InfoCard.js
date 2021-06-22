@@ -12,15 +12,15 @@ function InfoCard({className}) {
 
             <div className='flex flex-nowrap mb-2 text-shadow'>
                 <p className='font-light w-16 text-right'>Email:</p>
-                <a className='underline ml-2 text-right' href='mailto:damiensaavi@gmail.com'>damiensaavi@gmail.com</a>
+                <a rel="noreferrer noopener" target="_blank" className='underline ml-2 text-right' href='mailto:damiensaavi@gmail.com'>damiensaavi@gmail.com</a>
             </div>
             <div className='flex flex-nowrap mb-2 text-shadow'>
                 <p className='font-light w-16 text-right'>Github:</p>
-                <a className='underline ml-2 text-right' href='https://github.com/DamienSaavi/'>damienmousavi</a>
+                <a rel="noreferrer noopener" target="_blank" className='underline ml-2 text-right' href='https://github.com/DamienSaavi/'>damiensaavi</a>
             </div>
             <div className='flex flex-nowrap mb-2 text-shadow'>
                 <p className='font-light w-16 text-right'>LinkedIn:</p>
-                <a className='underline ml-2 text-right' href='https://www.linkedin.com/in/damienmousavi/'>damienmousavi</a>
+                <a rel="noreferrer noopener" target="_blank" className='underline ml-2 text-right' href='https://www.linkedin.com/in/damienmousavi/'>damienmousavi</a>
             </div>
 
             <p className='mt-4 mb-2 text-shadow'>Resume:</p>
