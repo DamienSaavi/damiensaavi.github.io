@@ -1,6 +1,13 @@
+body {
+  background: #332b46;
+}
+
+.font-jos{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 .root {
   font-family: 'Josefin Sans', sans-serif;
-  /* background: #4c3a64; */
   background: #332b46;
 }
 
@@ -21,6 +28,10 @@
   content: "";
   display: block;
   padding-bottom: 100%;
+}
+
+.shadow-glow {
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.15);
 }
 
 .terminal {

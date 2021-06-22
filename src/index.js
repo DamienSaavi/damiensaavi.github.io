@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import NavigationBar from './components/NavigationBar'
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,15 +8,21 @@ import {
   Link
 } from "react-router-dom";
 import './stylesheet/index.css';
+import './stylesheet/App.css';
 import App from './App';
+import About from './routes/About'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <NavigationBar path={window.location.pathname.toLowerCase()}/>
     <Router>
       <Switch>
         <Route exact path="/">
           <App />
+        </Route>
+        <Route exact path="/about">
+          <About />
         </Route>
       </Switch>
     </Router>

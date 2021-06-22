@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import NavigationBar from './components/NavigationBar'
 import Project from './components/Project.js'
 import { init } from 'ityped'
-import './stylesheet/App.css'
 import { IoRocket, IoLogoGithub } from "react-icons/io5";
 import brewmate_icon from './assets/brewmate.png'
 import vybot_icon from './assets/vybot.png'
@@ -70,8 +68,7 @@ function App() {
   const techli = tech.map((e, i) => <span><li className='inline' id={'intro-tech-' + i}></li></span>)
 
   return (
-    <div className='root text-gray-50'>
-      <NavigationBar />
+    <div className='root text-gray-200'>
       <div className='intro-container flex flex-col relative md:flex-row justify-center items-center gap-4 md:gap-8 h-screen min-h-sm w-full px-4 pb-16 overflow-hidden'>
         <div className='intro-name text-center md:text-left flex flex-col text-shadow z-10'>
           <p className='text-left opacity-90'>Hello👋🏽 I'm</p>
@@ -114,7 +111,7 @@ function App() {
         {/* TODO: use a loop to render wp api response instead */}
 
         <div className='relative'>
-          <div className='bg-main-light opacity-50 absolute h-full w-1 left-1/2 z-0'></div>
+          <div className='hidden sm:block bg-main-light opacity-50 absolute h-full w-1 left-1/2 z-0'></div>
           <Project index={0}>
             <Project.Logo src={brewmate_icon} />
             <Project.Description title='Cheftmate'>
@@ -183,7 +180,7 @@ function App() {
           </Project>
 
 
-          <div className='flex h-20 w-60 mx-auto p-4 justify-center bg-main-light z-20 rounded-xl'>
+          <div className='flex h-18 w-60 mx-auto p-4 justify-center bg-main-light z-20 rounded-xl'>
             {/* <div className='bg-main-light mx-auto p-8 z-20 rounded-xl'> */}
               <a className='w-48 text-black text-center transform border-coa-dark bg-coa border-b-4 hover:bg-coa-highlight active:border-b-2 active:translate-y-0.5 active:mt-0.5 rounded-xl px-3 py-2.5 align-center' href='https://github.com/DamienSaavi?tab=repositories'>More on GitHub<IoLogoGithub className='ml-1 inline align-baseline' /></a>
             {/* </div> */}
