@@ -1,23 +1,28 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
+import InfoCard from './InfoCard';
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
 import logo from '../assets/logo-md.png'
+import '../stylesheet/App.css'
 
-const navigation = [
-    { name: 'Home', href: '/', current: true },
-    { name: 'Projects', href: 'https://github.com/DamienSaavi?tab=repositories', current: false },
-    // { name: 'About', href: '/about', current: false },
-    // { name: 'Contact', href: '/contact', current: false },
-]
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function NavigationBar() {
+export default function NavigationBar({ path }) {
+    const [card, toggleCard] = useState(false)
+
+    const navigation = [
+        { name: 'Home', href: '/', current: (path == '/') },
+        { name: 'About', href: '/about', current: (path == '/about') },
+    ]
+
+
+
     return (
-        <Disclosure as="nav" className="fixed w-full bg-main-dark z-50">
+        <Disclosure as="nav" className="fixed font-jos w-full bg-main-dark z-50">
             {({ open }) => (
                 <>
                     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -34,7 +39,7 @@ export default function NavigationBar() {
                                 </Disclosure.Button>
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                                <div className="flex-shrink-0 flex items-center">
+                                <div className="flex flex-shrink-0 items-center">
                                     <img
                                         className="block h-9 w-auto rounded-full"
                                         src={logo}
@@ -52,7 +57,7 @@ export default function NavigationBar() {
                                                 key={item.name}
                                                 href={item.href}
                                                 className={classNames(
-                                                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                    item.current ? 'bg-main-light text-white' : 'text-gray-300 hover:bg-opacity-50 hover:bg-main-light hover:text-white',
                                                     'px-3 py-2 rounded-md text-sm font-medium'
                                                 )}
                                                 aria-current={item.current ? 'page' : undefined}
@@ -63,10 +68,18 @@ export default function NavigationBar() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='hidden sm:block text-white sm:space-x-3'>
-                                <a target="_blank" href='https://github.com/DamienSaavi'><IoLogoGithub className='text-main ml-1 inline w-6 h-6' title='GitHub' /></a>
-                                <a target="_blank" href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-main ml-1 inline w-6 h-6' title='LinkedIn' /></a>
-                            </div>
+                            {path != '/about' ? <div className='hidden sm:flex relative text-white h-full'>
+
+                                <div className='p-2 z-10 flex h-full w-80 select-none text-center bg-main-dark justify-end' >
+                                    <a className='w-32 flex flex-grow-0 text-center justify-center transform bg-coa border-b-4 active:border-b-2 active:mt-0.5 active:translate-y-0.5 hover:bg-coa-highlight border-coa-dark rounded-xl px-3 py-2.5 text-black cursor-pointer' onClick={() => toggleCard(!card)}>Contact Info</a>
+                                </div>
+                                <div className={`transition transform ${card ? 'translate-y-2' : '-translate-y-full'} w-min absolute top-full right-0 z-0`}>
+                                    <InfoCard className={`rounded-3xl transition ${card ? 'shadow-glow' : 'shadow-none'}`} />
+                                </div>
+                                {/* <a target="_blank" href='https://github.com/DamienSaavi'><IoLogoGithub className='text-main ml-1 inline w-6 h-6' title='GitHub' /></a>
+                                <a target="_blank" href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-main ml-1 inline w-6 h-6' title='LinkedIn' /></a> */}
+                            </div> : null}
+
                         </div>
                     </div>
 
@@ -77,7 +90,7 @@ export default function NavigationBar() {
                                     key={item.name}
                                     href={item.href}
                                     className={classNames(
-                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                        item.current ? ' bg-main-light text-white' : 'text-gray-300 hover:bg-main-light hover:bg-opacity-50 hover:text-white',
                                         'block px-3 py-2 rounded-md text-base font-medium'
                                     )}
                                     aria-current={item.current ? 'page' : undefined}
@@ -85,9 +98,23 @@ export default function NavigationBar() {
                                     {item.name}
                                 </a>
                             ))}
-                            <div className='flex flex-row gap-4 justify-center'>
-                                <a target="_blank" href='https://github.com/DamienSaavi'><IoLogoGithub className='text-main ml-1 inline w-9 h-9' title='GitHub' /></a>
-                                <a target="_blank" href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='text-main ml-1 inline w-9 h-9' title='LinkedIn' /></a>
+                            {/* <a
+                                key={'LinkedIn'}
+                                href={'https://www.linkedin.com/in/damienmousavi'}
+                                className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium')}
+                            >
+                                {'LinkedIn'}
+                            </a>
+                            <a
+                                key={'Github'}
+                                href={'https://github.com/DamienSaavi'}
+                                className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium')}
+                            >
+                                {'Github'}
+                            </a> */}
+                            <div className='flex flex-row gap-4 py-4 justify-start text-gray-300'>
+                                <a target="_blank" href='https://github.com/DamienSaavi'><IoLogoGithub className='hover:text-white ml-1 inline w-9 h-9' title='GitHub' /></a>
+                                <a target="_blank" href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='hover:text-white ml-1 inline w-9 h-9' title='LinkedIn' /></a>
                             </div>
                         </div>
                     </Disclosure.Panel>

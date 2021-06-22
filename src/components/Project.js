@@ -34,7 +34,7 @@ Project.ButtonBar = ({ children }) => {
 Project.Button = ({ href, children }) => {
     return (
         <div className='h-11 flex'>
-            <a className='w-32 flex flex-grow-0 text-center justify-center transform bg-main border-b-4 active:border-b-2 active:translate-y-0.5 hover:bg-main-highlight active:mt-0.5 border-main-dark rounded-xl px-3 py-2 text-black' href={href}>
+            <a className='w-32 flex flex-grow-0 text-center justify-center transform bg-main border-b-4 active:border-b-2 active:translate-y-0.5 hover:bg-main-highlight active:mt-0.5 border-main-dark rounded-xl px-3 py-2.5 text-black' href={href}>
                 {children}
             </a>
         </div>
