@@ -5,7 +5,8 @@ My portfolio website made using ReactJS, iTyped, and TailwindCSS.
 Check it out here: https://damiensaavi.github.io 
 
 ### TODO
-- [ ] Use Frontity; migrate to Wordpress.
+- [ ] Use headless CMS - migrate to Gatsby
+- [ ] Extract terminal input/output function
 - [ ] Add commands to terminal
 
 ### Done
