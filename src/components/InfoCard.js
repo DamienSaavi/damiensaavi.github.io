@@ -25,8 +25,8 @@ function InfoCard({className}) {
 
             <p className='mt-4 mb-2 text-shadow'>Resume:</p>
             <div className='w-full flex flex-nowrap justify-center gap-4'>
-                <a className='w-1/2 flex flex-grow-0 text-center justify-center transform bg-main border-b-4 active:border-b-2 active:translate-y-0.5 hover:bg-main-highlight active:mt-0.5 border-main-dark rounded-xl px-3 py-2 text-black' href='https://drive.google.com/uc?export=download&id=1qLrE7yxEBF8BNEWDCHknfZVwv5w7Pfpi'>docx</a>
-                <a className='w-1/2 flex flex-grow-0 text-center justify-center transform bg-main border-b-4 active:border-b-2 active:translate-y-0.5 hover:bg-main-highlight active:mt-0.5 border-main-dark rounded-xl px-3 py-2 text-black' href='https://drive.google.com/uc?export=download&id=1pw0aaIND64xrdtx-alLBNeUyYG8XOFZn'>pdf</a>
+                {/* <a className='w-1/2 flex flex-grow-0 text-center justify-center transform bg-main border-b-4 active:border-b-2 active:translate-y-0.5 hover:bg-main-highlight active:mt-0.5 border-main-dark rounded-xl px-3 py-2 text-black' href='https://drive.google.com/uc?export=download&id=1qLrE7yxEBF8BNEWDCHknfZVwv5w7Pfpi'>docx</a> */}
+                <a className='w-full flex flex-grow-0 text-center justify-center transform bg-main border-b-4 active:border-b-2 active:translate-y-0.5 hover:bg-main-highlight active:mt-0.5 border-main-dark rounded-xl px-3 py-2 text-black' href='https://drive.google.com/uc?export=download&id=1pw0aaIND64xrdtx-alLBNeUyYG8XOFZn'>Download</a>
             </div>
         </div>
     )

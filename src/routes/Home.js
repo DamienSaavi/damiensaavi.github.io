@@ -146,7 +146,7 @@ function Home({ iTypeInit, setiTypeInit, className }) {
                   GitHub<IoLogoGithub className='ml-1 inline w-4 h-4 align-baseline' />
                 </Project.Button>
                 <Project.Button href='https://discord.com/api/oauth2/authorize?client_id=679935364030660646&permissions=3155968&scope=bot'>
-                  Try it!<IoLogoGithub className='ml-1 inline w-4 h-4 align-baseline' />
+                  Try it!
                 </Project.Button>
               </Project.ButtonBar>
             </Project.Description>
@@ -178,7 +178,7 @@ function Home({ iTypeInit, setiTypeInit, className }) {
                   GitHub<IoLogoGithub className='ml-1 inline w-4 h-4 align-baseline' />
                 </Project.Button>
                 <Project.Button href='https://damiensaavi.github.io/lazy-game-of-life'>
-                  Website
+                  Try it!
                 </Project.Button>
               </Project.ButtonBar>
             </Project.Description>
