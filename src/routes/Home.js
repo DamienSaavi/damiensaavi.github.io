@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Project from '../components/Project.js'
 import { init } from 'ityped'
 import { IoRocket, IoLogoGithub } from "react-icons/io5";
@@ -11,62 +11,106 @@ const tech = [
   'ReactJS', 'MySQL', 'Node',
   'ExpressJS', 'Python', 'GCP',
   'MongoDB', 'PHP', 'C#'
-]
+] 
 
-function Home({ iTypeInit, setiTypeInit, className }) {
+const loadingFrames = [...new Array(5).fill('▄▄▄▄'), '■▄▄▄', '▀■▄▄', '■▀■▄', '▄■▀■', '▄▄■▀', '▄▄▄■']
 
-  // TODO: try useref for ityped queries selection
+function Home({ className }) {
+  const loader = useRef({ step: 0, timer: null })
+
   useEffect(() => {
-    if (iTypeInit) return
-    setiTypeInit(true)
+    submitCommand(null)
+  }, [])
 
-    // TODO: change to a cleaner recursive function
-    init(document.querySelector('#intro-desc'), {
-      showCursor: true,
-      strings: ["CSUF graduate with a bachelor's degree in computer science plus various extra-curricular activities in full-stack web development, video game development, and tutoring for math, computer science, and physics."],
-      loop: false,
-      typeSpeed: 5,
-      startDelay: 2000,
-      cursorChar: "█",
-      onFinished: function () {
-        
-        let elements = document.getElementsByClassName('ityped-cursor');
-        if (elements.length > 0)
-          elements[0].parentNode.removeChild(elements[0]);
+  function toggleLoading(val) {
+    const outputDiv = document.getElementById("terminal-output")
+    loader.current.step = 0
 
-        init(document.querySelector('#intro-tech'), {
-          showCursor: true,
-          strings: ['Some recent tech I’m using:'],
+    if (val) {
+      loader.current.timer = setInterval(() => {
+        const i = loader.current.step
+        outputDiv.innerHTML = loadingFrames[i]
+        loader.current.step = (i + 1) % loadingFrames.length
+      }, 100);
+    } else {
+      clearInterval(loader.current.timer)
+      outputDiv.innerHTML=''
+    }
+  }
+
+  function outputToTerminal(output) {
+    const el = output.shift()
+    const id = 'terminal-output-' + output.length
+
+    switch ((typeof el).toLowerCase()) {
+      case 'string':
+        const p = document.createElement('p')
+
+        p.id = id
+        p.className = 'mb-2'
+        document.getElementById("terminal-output").appendChild(p);
+        init(document.querySelector('#' + id), {
+          showCursor: false,
+          strings: [el],
           loop: false,
           typeSpeed: 5,
           startDelay: 0,
-          cursorChar: "█",
           onFinished: function () {
-            let elements = document.getElementsByClassName('ityped-cursor');
-            if (elements.length > 0) {
-              elements[0].parentNode.removeChild(elements[0]);
-            }
-            for (let i = 0; i < tech.length; i++) {
-              init(document.querySelector('#intro-tech-' + i), {
-                showCursor: true,
-                strings: [tech[i]],
-                loop: false,
-                typeSpeed: 50,
-                startDelay: i * 100,
-                cursorChar: "█",
-                onFinished: function () {
-                  let elements = document.getElementsByClassName('ityped-cursor');
-                  elements[0].parentNode.removeChild(elements[0]);
-                }
-              })
-            }
-          }   // mind the steps
-        })
-      }
-    })
-  })
 
-  const techli = tech.map((e, i) => <span><li className='inline' id={'intro-tech-' + i}></li></span>)
+            if (output.length > 0)
+              outputToTerminal(output)
+          }
+        })
+        break;
+      case 'object':
+        const ul = document.createElement('ul')
+
+        ul.id = id
+        ul.className = 'grid grid-cols-3 gap-0 mx-auto pl-4 mb-2'
+        document.getElementById("terminal-output").appendChild(ul)
+
+        el.map((e, i) => {
+          const li = document.createElement('li')
+          li.id = id + '-' + i
+
+          const sp = document.createElement('span')
+          sp.appendChild(li)
+          ul.appendChild(sp)
+        })
+
+        for (let i = 0; i < el.length; i++) {
+          init(document.querySelector('#' + id + '-' + i), {
+            showCursor: false,
+            strings: [el[i]],
+            loop: false,
+            typeSpeed: 50,
+            startDelay: i * 100,
+            onFinished: function () {
+
+              if (output.length > 0 && i === el.length - 1)
+                outputToTerminal(output)
+            }
+          })
+        }
+        break;
+        default:
+          return
+    }
+  }
+
+  function submitCommand(event) {
+    toggleLoading(true)
+
+    if (event)
+      event.preventDefault()
+
+    const output = ["CSUF graduate with a bachelor's degree in computer science plus various extra-curricular activities in full-stack web development, video game development, and tutoring for math, computer science, and physics.", 'Some recent tech I’m using:', tech]
+
+    setTimeout(() => {
+      toggleLoading(false)
+      outputToTerminal(output)
+    }, 3000);
+  }
 
   return (
     <div className={`root text-gray-200 ${className}`}>
@@ -81,32 +125,33 @@ function Home({ iTypeInit, setiTypeInit, className }) {
 
         <div className='terminal relative flex flex-col text-sm md:text-base w-full max-w-lg h-1/2 max-h-102 md:h-96 shadow-3xl'>
           <div className='terminal-bar relative text-xs flex justify-start h-8 py-2'>
-            <div class='h-4 w-4 rounded-full ml-2 flex-shrink-0 btn-exit'></div>
-            <div class='h-4 w-4 rounded-full ml-2 flex-shrink-0 btn-min'></div>
-            <div class='h-4 w-4 rounded-full ml-2 flex-shrink-0 btn-max'></div>
+            <div className='h-4 w-4 rounded-full ml-2 flex-shrink-0 btn-exit'></div>
+            <div className='h-4 w-4 rounded-full ml-2 flex-shrink-0 btn-min'></div>
+            <div className='h-4 w-4 rounded-full ml-2 flex-shrink-0 btn-max'></div>
             <span className='absolute w-full text-center'>~/intro.sh</span>
           </div>
           <div className='terminal-console overflow-y-auto p-2 flex-grow'>
-            <div className='w-full opacity-80 pb-8'>
-              <p className='inline' id="intro-desc"></p><div className=' mb-4'/>
-              <p className='inline' id="intro-tech"></p><div className=' mb-4'/>
+            <div className='w-full opacity-80 pb-8' id='terminal-output'>
+              {/* <p className='inline' id="intro-desc"></p><div className=' mb-4' />
+              <p className='inline' id="intro-tech"></p><div className=' mb-4' />
               <ul className='grid grid-cols-3 gap-0 mx-auto pl-4'>
                 {techli}
-              </ul>
+              </ul> */}
             </div>
           </div>
           <div className='h-14' />
-          <div className='cmdline-container flex flex-row justify-between gap-2 absolute bottom-0 w-full p-2'>
-            <div className='cmdline flex p-2 gap-2 w-full'>
+          <div className='cmdline-container flex flex-row justify-between gap-2 absolute bottom-0 w-full p-2' onSubmit={(event) => { submitCommand(event) }}>
+            <form className='cmdline flex p-2 gap-2 w-full'>
               <p className='intro-launch opacity-90'>{'>'}</p>
-              <input type='text' className='w-full' id='shell' placeholder='Commands coming soon...' />
-            </div>
+              <input type='text' className='w-full' id='shell' autoComplete='off' placeholder='Commands coming soon...' />
+              <input type="submit" className="hidden" />
+            </form>
             {/* <button></button> */}
           </div>
         </div>
       </div >
 
-      <div class='projects-container mx-auto max-w-lg sm:max-w-3xl -mt-20 p-2'>
+      <div className='projects-container mx-auto max-w-lg sm:max-w-3xl -mt-20 p-2'>
         <p className='text-4xl flex justify-center Z-10 text-shadow'>Projects<IoRocket className='ml-1 w-6' /></p>
         <hr className='mt-0 mb-12 w-3/4 mx-auto' />
         {/* TODO: use a loop to render wp api response instead */}

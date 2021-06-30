@@ -18,9 +18,9 @@ Project.Description = ({ title, children }) => {
     return (
         <div className='w-full bg-main-light rounded-3xl p-4 pt-24 sm:pt-4 sm:px-6 -mt-24 sm:mt-0 z-20 '>
             <p className='text-3xl font-bold text-center py-2 sm:text-left text-shadow text-accent-light'>{title}</p>
-            <p className='opacity-90'>
+            <div className='opacity-90'>
                 {children}
-            </p>
+            </div>
         </div>
     )
 }

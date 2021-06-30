@@ -5,7 +5,7 @@ function InfoCard({className}) {
     return (
 
         <div className={`${className} bg-main-light p-6 self-start w-min text-gray-200`}>
-            <img src={logo} className='w-2/5 mx-auto shadow-xl rounded-full mb-2' />
+            <img src={logo} className='w-2/5 mx-auto shadow-xl rounded-full mb-2' alt=''/>
             <p className='text-center text-xl font-semibold text-shadow'>Damien Mousavi</p>
 
             <p className='mt-4 mb-2 text-shadow'>Contact:</p>

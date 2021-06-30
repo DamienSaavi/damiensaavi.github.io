@@ -1,6 +1,6 @@
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import InfoCard from './InfoCard';
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
 import logo from '../assets/logo-md.png'
@@ -15,8 +15,8 @@ export default function NavigationBar({ path, setRoute }) {
     const [card, toggleCard] = useState(false)
 
     const navigation = [
-        { name: 'Home', routeTo: 'home', current: (path == 'home') },
-        { name: 'About me', routeTo: 'about', current: (path == 'about') },
+        { name: 'Home', routeTo: 'home', current: (path === 'home') },
+        { name: 'About me', routeTo: 'about', current: (path === 'about') },
     ]
 
 
@@ -68,15 +68,15 @@ export default function NavigationBar({ path, setRoute }) {
                                     </div>
                                 </div>
                             </div>
-                                <div className={`transform transition ${path=='about'? `-translate-y-full`:``} hidden sm:flex relative text-white h-full`}>
-                                    <div className='p-2 z-10 flex h-full w-80 select-none text-center bg-main-dark justify-end' >
-                                        <a className='w-32 flex flex-grow-0 text-center justify-center transform bg-coa border-b-4 active:border-b-2 active:mt-0.5 active:translate-y-0.5 hover:bg-coa-highlight border-coa-dark rounded-xl px-3 py-2.5 text-black cursor-pointer'
+                            <div className={`transform transition ${path === 'about' ? `-translate-y-full` : ``} hidden sm:flex relative text-white h-full`}>
+                                <div className='p-2 z-10 flex h-full w-80 select-none text-center bg-main-dark justify-end' >
+                                    <a className='w-32 flex flex-grow-0 text-center justify-center transform bg-coa border-b-4 active:border-b-2 active:mt-0.5 active:translate-y-0.5 hover:bg-coa-highlight border-coa-dark rounded-xl px-3 py-2.5 text-black cursor-pointer'
                                         onClick={() => toggleCard(!card)}>Contact Info</a>
-                                    </div>
-                                    <div className={`transition transform ${card && path=='home' ? 'translate-y-2' : '-translate-y-full'} w-min absolute top-full right-0 z-0`}>
-                                        <InfoCard className={`rounded-3xl transition ${card && path=='home' ? 'shadow-glow' : 'shadow-none'}`} />
-                                    </div>
                                 </div>
+                                <div className={`transition transform ${card && path === 'home' ? 'translate-y-2' : '-translate-y-full'} w-min absolute top-full right-0 z-0`}>
+                                    <InfoCard className={`rounded-3xl transition ${card && path === 'home' ? 'shadow-glow' : 'shadow-none'}`} />
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -88,7 +88,7 @@ export default function NavigationBar({ path, setRoute }) {
                                     key={item.name}
                                     className={classNames(
                                         item.current ? ' bg-main-light text-white' : 'text-gray-300 hover:bg-main-light hover:bg-opacity-50 hover:text-white',
-                                        'block px-3 py-2 rounded-md text-base font-medium cursor-pointer select-none' 
+                                        'block px-3 py-2 rounded-md text-base font-medium cursor-pointer select-none'
                                     )}
                                     aria-current={item.current ? 'page' : undefined}
                                     onClick={() => setRoute(item.routeTo)}
@@ -97,8 +97,8 @@ export default function NavigationBar({ path, setRoute }) {
                                 </a>
                             ))}
                             <div className='flex flex-row gap-4 py-4 justify-start text-gray-300'>
-                                <a target="_blank" href='https://github.com/DamienSaavi'><IoLogoGithub className='hover:text-white ml-1 inline w-9 h-9' title='GitHub' /></a>
-                                <a target="_blank" href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='hover:text-white ml-1 inline w-9 h-9' title='LinkedIn' /></a>
+                                <a target="_blank" rel="noreferrer" href='https://github.com/DamienSaavi'><IoLogoGithub className='hover:text-white ml-1 inline w-9 h-9' title='GitHub' /></a>
+                                <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/damienmousavi/'><IoLogoLinkedin className='hover:text-white ml-1 inline w-9 h-9' title='LinkedIn' /></a>
                             </div>
                         </div>
                     </Disclosure.Panel>
