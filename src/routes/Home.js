@@ -20,6 +20,7 @@ function Home({ className }) {
 
   useEffect(() => {
     submitCommand(null)
+    alert('Please visit my updated website at http://damiensaavi.com\nThis website does not recieve updates and will be closed soon.')
   }, [])
 
   function toggleLoading(val) {
