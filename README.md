@@ -1,13 +1,5 @@
 # README
 
-### Description
-My portfolio website made using ReactJS, iTyped, and TailwindCSS.
-Check it out here: https://damiensaavi.github.io 
-
-### TODO
-- [ ] Use headless CMS - migrate to Gatsby
-- [ ] Extract terminal input/output function
-- [ ] Add commands to terminal
-
-### Done
-- [x] Add "About" page
+## NOTICE
+This project has moved to https://github.com/DamienSaavi/Portfolio
+This repo will be archived soon!
