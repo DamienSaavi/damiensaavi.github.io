@@ -9,6 +9,9 @@ function App() {
     const [route, setRoute] = useState('home')
     const [iTypeInit, setiTypeInit] = useState(false)
 
+    // temporary fix to redirect traffic to new website
+    window.location.href = 'http://damiensaavi.com'
+
     return (
         <>
             <NavigationBar path={route} setRoute={setRoute} setiTypeInit={setiTypeInit} />
